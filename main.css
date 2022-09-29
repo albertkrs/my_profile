@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #bc91e4;
+}
+
+body .landing {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .landing .form-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 4em 2em;
+}
+
+body .landing .form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .landing .form-container form h3 {
+  margin-bottom: 1em;
+  font-size: 2em;
+  letter-spacing: 0.3em;
+}
+
+body .landing .form-container form .input {
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid #bc91e4;
+  background-color: #ffffff;
+  margin-bottom: 1em;
+}
+
+body .landing .form-container form .btn {
+  width: 100%;
+  font-size: 1em;
+  padding: 0.6em;
+  text-align: center;
+  color: #fff;
+  border: none;
+  background-color: #bc91e4;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.1rem;
+}
+
+body .landing .form-container form a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=main.css.map */
