@@ -2,25 +2,26 @@
 $serverName = "localhost";
 $userName = "root";
 $password = "";
-$database = "ecommerce";
+$database = "my_profile";
 
 $connection = new mysqli($serverName, $userName, $password, $database);
 session_start();
 
 error_reporting(0);
 if(isset($_SESSION['username'])){
-    header("location: profile.php");
+    header("Location: profile.php");
     }
 
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $sql = "SELECT * FROM users WHERE email = '$email' AND password ='$password'";
+    $sql = "SELECT * FROM user WHERE email = '$email' AND password ='$password'";
     $result = mysqli_query($connection,$sql);
     if($result->num_rows>0){
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['username']= $row['username'];
+        $_SESSION['username']= $row['name'];
+        header("location: profile.php");
     }else{
         echo "<script>alert('email or password wrong!')</script>";
     }
@@ -44,8 +45,8 @@ if(isset($_POST['submit'])){
                 <h3>LOGIN</h3>
                 <input type="text" placeholder="Email" name="email" class="input">
                 <input type="text" placeholder="Passowrd" name="password" class="input">
-                <button name="submit" class="btn">Login</button>
-                <p>you don't have an account ? <a href="">Register here</a></p>
+                <button name="submit"  class="btn">Login</button>
+                <p>you don't have an account ? <a href="register.php">Register here</a></p>
             </form>
         </div>
 
