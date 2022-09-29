@@ -42,6 +42,22 @@ VALUES('$user_id','$text')";
                 <button name="submit_message" class="btn">POST</button>
 
             </form>
+    
+     <?php
+    @include 'config.php';
+
+    $user_id=$_SESSION['id'];
+    $sql = "SELECT * FROM message WHERE user_id='$user_id'";
+    $result = mysqli_query($connect,$sql);
+    if($result->num_rows<1){
+        echo "<p>there are no messages to show</p>";
+    }else{
+
+        while($row = $result->fetch_assoc()){
+            echo " <p>$row[text]  <br></p>";
+    }
+    }
+    ?>
 </body>
 
 </html>
