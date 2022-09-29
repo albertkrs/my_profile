@@ -4,6 +4,23 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
     header("location: login.php");
 }
 ?>
+<?php
+
+
+@include 'config.php';
+
+
+if (isset($_POST['submit_message'])){
+$user_id=$_SESSION['id'];
+$text=$_POST['text'];
+$sql="INSERT INTO message (user_id ,text) 
+VALUES('$user_id','$text')";
+  $result=mysqli_query($connect,$sql);
+
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
