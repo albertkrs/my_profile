@@ -21,9 +21,11 @@ if(isset($_POST['submit'])){
     if($result->num_rows>0){
         $row = mysqli_fetch_assoc($result);
         $_SESSION['username']= $row['name'];
+        $_SESSION['id']= $row['id'];
         header("location: profile.php");
     }else{
         echo "<script>alert('email or password wrong!')</script>";
+        
     }
 }
 ?>
